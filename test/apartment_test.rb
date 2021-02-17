@@ -37,13 +37,14 @@ class ApartmentTest < Minitest::Test
   def test_there_is_no_renter
     unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
 
-    assert_equal nil, unit1.renter
+    assert_nil nil, unit1.renter
   end
 
   def test_add_renter
     unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
-    unit1.add_renter(renter1)
-    
-    assert_equal renter1, unit1.renter
+    jessie = Renter.new("Jessie")
+    unit1.add_renter(jessie)
+
+    assert_equal jessie, unit1.renter
   end
 end
