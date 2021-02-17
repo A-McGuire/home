@@ -19,7 +19,7 @@ class Apartment
   end
 
   def bedrooms
-    apartment_specs[:bathrooms]
+    apartment_specs[:bedrooms]
   end
 
   def add_renter(renter)
